@@ -1,6 +1,5 @@
 package com.boardinghouse.boardinghouse_api.controller;
 
-import com.boardinghouse.boardinghouse_api.BoardinghouseApiApplication;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.http.HttpStatus;
@@ -16,18 +15,15 @@ import com.boardinghouse.boardinghouse_api.repository.RoomRepository;
 import com.boardinghouse.boardinghouse_api.model.Room;
 import java.util.List;
 import java.util.Optional;
-import org.springframework.web.bind.annotation.RequestParam;
 
 
 
 @RestController
 @RequestMapping("/api/rooms")
 public class RoomController {
-    private final BoardinghouseApiApplication boardinghouseApiApplication;
     private final RoomRepository roomRepository;
-    public RoomController(RoomRepository roomRepository, BoardinghouseApiApplication boardinghouseApiApplication) {
+    public RoomController(RoomRepository roomRepository) {
         this.roomRepository = roomRepository;
-        this.boardinghouseApiApplication = boardinghouseApiApplication;
     }
     // Get all rooms
     @GetMapping
@@ -45,7 +41,7 @@ public class RoomController {
     // Get available rooms
     @GetMapping("/available")
     public List<Room> getAvailableRooms() {
-        return roomRepository.findByIsAvailableTrue(true);
+        return roomRepository.findByIsAvailableTrue();
     }
     // Create new room
     @PostMapping
@@ -68,7 +64,6 @@ public class RoomController {
 
         Room room = optionalRoom.get();
         room.setRoomNumber(roomDetails.getRoomNumber());
-        room.setFloor(roomDetails.getFloor());
         room.setPricePerMonth(roomDetails.getPricePerMonth());
         room.setIsAvailable(roomDetails.getIsAvailable());
         room.setDescription(roomDetails.getDescription());

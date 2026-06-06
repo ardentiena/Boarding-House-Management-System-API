@@ -18,9 +18,6 @@ public class Room {
     @Column(name = "room_number", unique = true, nullable = false, length = 20)
     private String roomNumber;
     
-    @Column(name = "floor")
-    private Integer floor;
-    
     @Column(name = "price_per_month", nullable = false)
     private BigDecimal pricePerMonth;
     

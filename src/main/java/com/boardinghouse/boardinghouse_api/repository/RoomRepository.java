@@ -5,6 +5,6 @@ import com.boardinghouse.boardinghouse_api.model.Room;
 import java.util.List;
 
 public interface RoomRepository extends JpaRepository<Room, Long> {
-    List<Room> findByIsAvailableTrue(boolean isAvailable);
+    List<Room> findByIsAvailableTrue();
     Room findByRoomNumber(String roomNumber);
 }
