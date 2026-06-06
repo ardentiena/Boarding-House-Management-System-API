@@ -3,7 +3,6 @@ services:
     image: postgres:15-alpine
     container_name: boardinghouse-api-db-1
     environment:
-      # Menggunakan DB_USER (sesuai .env Anda)
       POSTGRES_USER: ${DB_USER:?DB_USER is not set in .env}
       POSTGRES_PASSWORD: ${DB_PASSWORD:?DB_PASSWORD is not set in .env}
       POSTGRES_DB: ${DB_NAME:?DB_NAME is not set in .env}
@@ -14,7 +13,6 @@ services:
     networks:
       - internal-net
     healthcheck:
-      # Pengecekan diselaraskan dengan variabel DB_USER & DB_NAME Anda
       test: ["CMD-SHELL", "pg_isready -U ${DB_USER:?DB_USER is not set in .env} -d ${DB_NAME:?DB_NAME is not set in .env}"]
       interval: 3s
       timeout: 3s
@@ -22,8 +20,8 @@ services:
       start_period: 10s
 
   web-api:
-    build: .
-    container_name: boardinghouse-api-web-api-1
+    image: ardentiena/boardinghouse-api:latest
+    container_name: boardinghouse-api-web-api
     ports:
       - "8080:8080"
     environment:

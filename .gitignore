@@ -42,6 +42,7 @@ pgdata/
 *.db
 *.sql
 *.sqlite
+docker-compose.override.yml
 
 ### Logs ###
 logs/
