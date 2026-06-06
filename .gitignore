@@ -31,4 +31,21 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### Environment Variables ###
 .env
+.env.local
+.env.*.local
+
+### Docker volumes ###
+pgdata/
+*.db
+*.sql
+*.sqlite
+
+### Logs ###
+logs/
+*.log
+
+### Application generated files ###
+*.pid
