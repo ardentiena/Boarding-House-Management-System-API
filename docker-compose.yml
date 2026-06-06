@@ -36,6 +36,8 @@ services:
       MIDTRANS_SERVER_KEY: ${MIDTRANS_SERVER_KEY:?MIDTRANS_SERVER_KEY is not set in .env}
       MIDTRANS_CLIENT_KEY: ${MIDTRANS_CLIENT_KEY:?MIDTRANS_CLIENT_KEY is not set in .env}
       CORS_ALLOWED_ORIGINS: ${CORS_ALLOWED_ORIGINS:?CORS_ALLOWED_ORIGINS is not set in .env}
+      ADMIN_USERNAME: ${ADMIN_USERNAME:?ADMIN_USERNAME is not set in .env}
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD:?ADMIN_PASSWORD is not set in .env}
     depends_on:
       boardinghouse-api-db:
         condition: service_healthy
