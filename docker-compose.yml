@@ -43,16 +43,16 @@ services:
       - internal-net
 
   nginx:
-    image: nginx:alpine
+    build:
+      context: .
+      dockerfile: Dockerfile.nginx
     container_name: boardinghouse-nginx
     ports:
-      - "${NGINX_PORT:8000}:80"
-    volumes:
-      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+      - "8000:80"
     depends_on:
       - web-api
     networks:
-      - internal-net  
+      - internal-net
 
 networks:
   internal-net:
