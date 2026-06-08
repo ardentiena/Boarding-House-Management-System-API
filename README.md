@@ -22,7 +22,7 @@
 >
 > **This repository is intended for development and building Docker images.**
 > If you only want to **deploy the application** (without building from source), use the deployment repository instead:
-> 👉 [boardinghouse-api-deploy](https://github.com/ardentiena/boardinghouse-api-deploy)
+> 👉 [boardinghouse-api](https://github.com/ardentiena/Boarding-House-API.git))
 
 ---
 
