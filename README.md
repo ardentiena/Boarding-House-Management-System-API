@@ -9,7 +9,7 @@
 >
 > **Repository ini untuk pengembangan dan build image.**
 > Jika Anda hanya ingin **mendeploy aplikasi** (tanpa build source code), gunakan repository deployment:
-> 👉 [boardinghouse-api-deploy](https://github.com/ardentiena/boardinghouse-api-deploy)
+> 👉 [boardinghouse-api](https://github.com/ardentiena/Boarding-House-API.git)
 
 ---
 
@@ -304,10 +304,10 @@ GRANT ALL PRIVILEGES ON DATABASE boardinghouse TO postgres;
 
 Source code ini digunakan untuk build image yang kemudian di-push ke Docker Hub. Untuk deployment, gunakan repository berikut / This source code is used to build images that are then pushed to Docker Hub. For deployment, use this repository:
 
-👉 [boardinghouse-api-deploy](https://github.com/ardentiena/boardinghouse-api-deploy)
+👉 [boardinghouse-api-deploy](https://github.com/ardentiena/Boarding-House-API.git)
 
 ```bash
-git clone https://github.com/ardentiena/boardinghouse-api-deploy.git
+git clone https://github.com/ardentiena/Boarding-House-API.git
 cd boardinghouse-api-deploy
 cp .env.example .env
 # Edit .env
